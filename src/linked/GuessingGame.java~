@@ -1,0 +1,26 @@
+import acm.program.*;
+import acm.util.*;
+
+public class GuessingGame extends ConsoleProgram{
+  private int myNum;
+  public RandomGenerator r= new RandomGenerator();
+  int guess;
+  int tries;
+  public void run(){
+    myNum=r.nextInt(1,100);
+    while(guess!=myNum){
+      int guess=readInt("Enter your guess between 1 and 100");
+      if(guess>100||guess<1){
+        println("Out of bounds");
+      }else if(guess<myNum){
+        println("Too low");
+        tries++;
+      }else if(guess>myNum){
+        println("Too high");
+        tries++;
+      }
+    }
+    println("You got it! You tried "+tries+" times");
+  }
+}
+  

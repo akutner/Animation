@@ -1,0 +1,30 @@
+import acm.program.*;
+import acm.graphics.*;
+
+public void OIllusion extends GraphicsProgram{
+  int numRows=4;
+  int size=20;
+  int firstX=20;
+  int firstY=20;
+  int x=firstX;
+  int y=firstY;
+  int buffer=5;
+  public void run(){
+    for(int i=0;i<numRows;i++){
+      for(int c=0;c<numRows;c++){
+        add(createSquare(x,y));
+        firstX+=size+buffer;
+      }
+      x=firstX;
+      y+=size+buffer;
+    }
+      
+  }
+  public GRect createSquare(int x, int y){
+    GRect s=new GRect(x,y,size,size);
+    s.setFilled(true);
+    return s;
+  }
+}
+    
+  

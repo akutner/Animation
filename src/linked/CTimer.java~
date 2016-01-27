@@ -1,0 +1,19 @@
+
+import acm.program.*;
+import acm.graphics.*;
+public class CTimer extends GraphicsProgram{
+  private final int START_TIME= 10000;
+  private final int UNIT_TIME=72;
+  public void run(){
+    int cTime=START_TIME;
+    GLabel time =new GLabel(cTime/1000+":"+cTime/100+""+cTime/10);
+    time.setFont("Arial - 40");
+    int x=(getWidth()/2)-(time.getWidth()/2);
+    int y=(getHeight()/2)-(time.getHeight()/2);
+    time.setLocation(x,y);
+    while(ctime>0){
+      cTime-=UNIT_TIME;
+      time=(cTime/1000+":"+cTime/100+""+cTime/10);
+    }
+  }
+}
